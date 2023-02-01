@@ -22,14 +22,14 @@ int main(int argc, char* argv[])
 
     char* name;
     int priority;
-    int burst;
+        int burst;
 
-    if(argc <= 1) {
+    if (argc <= 1) {
         printf("No processes provided.\n");
         return 1;
     }
     in = fopen(argv[1], "r");
-    if(in == NULL) {
+    if (in == NULL) {
         printf("file %s failed to open\n", argv[1]);
         return 1;
     }

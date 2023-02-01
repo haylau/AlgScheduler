@@ -47,6 +47,9 @@ schedule_priority.o: src/schedule_priority.c inc/schedulers.h
 schedule_rr.o: src/schedule_rr.c inc/schedulers.h
 	$(CC) $(CFLAGS) -o bin/schedule_rr.o -c src/schedule_rr.c
 
+schedule_priority_rr.o: src/schedule_priority_rr.c inc/schedulers.h
+	$(CC) $(CFLAGS) -o bin/schedule_priority_rr.o -c src/schedule_priority_rr.c
+
 list.o: src/list.c inc/list.h
 	$(CC) $(CFLAGS) -o bin/list.o -c src/list.c
 
