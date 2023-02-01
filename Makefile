@@ -11,26 +11,26 @@ CFLAGS=-Wall -Wextra
 
 clean:
 	rm -rf bin/*.o
-	rm -rf bin/fcfs
+	rm -rf bin/fcfsbin/schedule_sjf.o
 	rm -rf bin/sjf
 	rm -rf bin/rr
 	rm -rf bin/priority
 	rm -rf bin/priority_rr
 
-rr: driver.o list.o CPU.o schedule_rr.o
-	$(CC) $(CFLAGS) -o bin/rr bin/driver.o bin/schedule_rr.o bin/list.o bin/CPU.o
+rr: driver.o list.o cpu.o schedule_rr.o
+	$(CC) $(CFLAGS) -o bin/rr bin/list.o bin/cpu.o bin/schedule_rr.o bin/driver.o 
 
-sjf: driver.o list.o CPU.o schedule_sjf.o
-	$(CC) $(CFLAGS) -o bin/sjf bin/driver.o bin/schedule_sjf.o bin/list.o bin/CPU.o
+sjf: driver.o list.o cpu.o schedule_sjf.o
+	$(CC) $(CFLAGS) -o bin/sjf bin/list.o bin/cpu.o bin/schedule_sjf.o bin/driver.o  
 
-fcfs: driver.o list.o CPU.o schedule_fcfs.o
-	$(CC) $(CFLAGS) -o bin/fcfs bin/driver.o bin/schedule_fcfs.o bin/list.o bin/CPU.o
+fcfs: driver.o list.o cpu.o schedule_fcfs.o
+	$(CC) $(CFLAGS) -o bin/fcfs bin/list.o bin/cpu.o bin/schedule_fcfs.o bin/driver.o 
 
-priority: driver.o list.o CPU.o schedule_priority.o
-	$(CC) $(CFLAGS) -o bin/priority bin/driver.o bin/schedule_priority.o bin/list.o bin/CPU.o
+priority: driver.o list.o cpu.o schedule_priority.o
+	$(CC) $(CFLAGS) -o bin/priority bin/list.o bin/cpu.o bin/schedule_priority.o bin/driver.o
 
-priority_rr: driver.o list.o CPU.o schedule_priority_rr.o
-	$(CC) $(CFLAGS) -o bin/priority_rr bin/driver.o bin/schedule_priority_rr.o bin/list.o bin/CPU.o
+priority_rr: driver.o list.o cpu.o schedule_priority_rr.o
+	$(CC) $(CFLAGS) -o bin/priority_rr bin/list.o bin/cpu.o bin/schedule_priority_rr.o bin/driver.o
 	
 driver.o: src/driver.c
 	$(CC) $(CFLAGS) -o bin/driver.o -c src/driver.c
@@ -50,5 +50,5 @@ schedule_rr.o: src/schedule_rr.c inc/schedulers.h
 list.o: src/list.c inc/list.h
 	$(CC) $(CFLAGS) -o bin/list.o -c src/list.c
 
-CPU.o: src/CPU.c inc/cpu.h
-	$(CC) $(CFLAGS) -o bin/CPU.o -c src/CPU.c
+cpu.o: src/cpu.c inc/cpu.h
+	$(CC) $(CFLAGS) -o bin/cpu.o -c src/cpu.c

@@ -18,6 +18,7 @@ struct node {
 
 // insert and delete operations.
 void insert(struct node** head, Task* task);
+void append(struct node** tail, Task* task);
 void delete(struct node** head, Task* task);
 void traverse(struct node* head);
 bool isEmpty(struct node* head);

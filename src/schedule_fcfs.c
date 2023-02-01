@@ -1,7 +1,7 @@
 /**
  * @file schedule.c
  * @author Hayden Lauritzen (haydenlauritzen@gmail.com)
- * @brief Scheduling
+ * @brief FCFS Scheduling
  * @date 2023-01-30
  *
  * @copyright Copyright (c) 2023
@@ -19,6 +19,7 @@ struct node* g_end;
 
 // execute scheduled programs
 void schedule() {
+    printf("               [nm] [p] [b]\n");
     while (!isEmpty(g_head)) {
         Task* nextTask = pickNextTask();
         run(nextTask, nextTask->burst);
@@ -41,8 +42,7 @@ void add(char* name, int priority, int burst) {
         g_end = g_head;
     }
     else {
-        insert(&g_end, task);
-        g_end = g_end->next;
+        insert(&g_head, task);
     }
 }
 
