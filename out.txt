@@ -38,6 +38,13 @@ Running task = [P3] [2] [1] for 1 units.
 Running task = [P4] [2] [7] for 7 units.
 Running task = [P5] [3] [4] for 4 units.
 
+CPU Utilization: %80.00
+
+   | P1 | P2 | P3 | P4 | P5 |
+---|----|----|----|----|----|
+TAT| 5  | 8  | 9  | 16 | 20 |
+ WT| 0  | 5  | 8  | 9  | 16 |
+ RT| 0  | 5  | 8  | 9  | 16 |
 
                [nm] [p] [b]
 Running task = [T1] [4] [20] for 20 units.
@@ -49,6 +56,13 @@ Running task = [T6] [1] [10] for 10 units.
 Running task = [T7] [3] [30] for 30 units.
 Running task = [T8] [10] [25] for 25 units.
 
+CPU Utilization: %95.88
+
+   | T1 | T2 | T3 | T4 | T5 | T6 | T7 | T8 |
+---|----|----|----|----|----|----|----|----|
+TAT| 20 | 45 | 70 | 85 | 105| 115| 145| 170|
+ WT| 0  | 20 | 45 | 70 | 85 | 105| 115| 145|
+ RT| 0  | 20 | 45 | 70 | 85 | 105| 115| 145|
 
 Running SJF
                [nm] [p] [b]
@@ -58,6 +72,13 @@ Running task = [P5] [3] [4] for 4 units.
 Running task = [P1] [4] [5] for 5 units.
 Running task = [P4] [2] [7] for 7 units.
 
+CPU Utilization: %80.00
+
+   | P3 | P2 | P5 | P1 | P4 |
+---|----|----|----|----|----|
+TAT| 1  | 4  | 8  | 13 | 20 |
+ WT| 0  | 1  | 4  | 8  | 13 |
+ RT| 0  | 1  | 4  | 8  | 13 |
 
                [nm] [p] [b]
 Running task = [T6] [1] [10] for 10 units.
@@ -69,6 +90,13 @@ Running task = [T3] [3] [25] for 25 units.
 Running task = [T2] [3] [25] for 25 units.
 Running task = [T7] [3] [30] for 30 units.
 
+CPU Utilization: %95.88
+
+   | T6 | T4 | T5 | T1 | T8 | T3 | T2 | T7 |
+---|----|----|----|----|----|----|----|----|
+TAT| 10 | 25 | 45 | 65 | 90 | 115| 140| 170|
+ WT| 0  | 10 | 25 | 45 | 65 | 90 | 115| 140|
+ RT| 0  | 10 | 25 | 45 | 65 | 90 | 115| 140|
 
 Running RR
                [nm] [p] [b]
@@ -92,18 +120,72 @@ Running task = [T3] [3] [5] for 5 units.
 Running task = [T7] [3] [10] for 10 units.
 Running task = [T8] [10] [5] for 5 units.
 
+CPU Utilization: %89.41
+
+   | T1 | T2 | T3 | T4 | T5 | T6 | T7 | T8 |
+---|----|----|----|----|----|----|----|----|
+TAT| 90 | 150| 155| 115| 125| 60 | 165| 170|
+ WT| 70 | 130| 135| 95 | 105| 50 | 145| 150|
+ RT| 0  | 10 | 20 | 30 | 40 | 50 | 60 | 70 |
+
+               [nm] [p] [b]
+Running task = [T1] [40] [50] for 10 units.
+Running task = [T2] [40] [50] for 10 units.
+Running task = [T3] [40] [50] for 10 units.
+Running task = [T4] [40] [50] for 10 units.
+Running task = [T5] [40] [50] for 10 units.
+Running task = [T6] [40] [50] for 10 units.
+Running task = [T1] [40] [40] for 10 units.
+Running task = [T2] [40] [40] for 10 units.
+Running task = [T3] [40] [40] for 10 units.
+Running task = [T4] [40] [40] for 10 units.
+Running task = [T5] [40] [40] for 10 units.
+Running task = [T6] [40] [40] for 10 units.
+Running task = [T1] [40] [30] for 10 units.
+Running task = [T2] [40] [30] for 10 units.
+Running task = [T3] [40] [30] for 10 units.
+Running task = [T4] [40] [30] for 10 units.
+Running task = [T5] [40] [30] for 10 units.
+Running task = [T6] [40] [30] for 10 units.
+Running task = [T1] [40] [20] for 10 units.
+Running task = [T2] [40] [20] for 10 units.
+Running task = [T3] [40] [20] for 10 units.
+Running task = [T4] [40] [20] for 10 units.
+Running task = [T5] [40] [20] for 10 units.
+Running task = [T6] [40] [20] for 10 units.
+Running task = [T1] [40] [10] for 10 units.
+Running task = [T2] [40] [10] for 10 units.
+Running task = [T3] [40] [10] for 10 units.
+Running task = [T4] [40] [10] for 10 units.
+Running task = [T5] [40] [10] for 10 units.
+Running task = [T6] [40] [10] for 10 units.
+
+CPU Utilization: %90.33
+
+   | T1 | T2 | T3 | T4 | T5 | T6 |
+---|----|----|----|----|----|----|
+TAT| 250| 260| 270| 280| 290| 300|
+ WT| 230| 240| 250| 260| 270| 280|
+ RT| 0  | 10 | 20 | 30 | 40 | 50 |
 
 Running PRI
                [nm] [p] [b]
 Running task = [T8] [10] [25] for 25 units.
-Running task = [T5] [5] [20] for 20 units.
 Running task = [T4] [5] [15] for 15 units.
+Running task = [T5] [5] [20] for 20 units.
 Running task = [T1] [4] [20] for 20 units.
-Running task = [T7] [3] [30] for 30 units.
-Running task = [T3] [3] [25] for 25 units.
 Running task = [T2] [3] [25] for 25 units.
+Running task = [T3] [3] [25] for 25 units.
+Running task = [T7] [3] [30] for 30 units.
 Running task = [T6] [1] [10] for 10 units.
 
+CPU Utilization: %95.88
+
+   | T8 | T4 | T5 | T1 | T2 | T3 | T7 | T6 |
+---|----|----|----|----|----|----|----|----|
+TAT| 25 | 40 | 60 | 80 | 105| 130| 160| 170|
+ WT| 0  | 25 | 40 | 60 | 80 | 105| 130| 160|
+ RT| 0  | 25 | 40 | 60 | 80 | 105| 130| 160|
 
 Running RR-PRI
                [nm] [p] [b]
@@ -127,4 +209,11 @@ Running task = [T3] [3] [5] for 5 units.
 Running task = [T7] [3] [10] for 10 units.
 Running task = [T6] [1] [10] for 10 units.
 
+CPU Utilization: %89.41
+
+   | T8 | T4 | T5 | T1 | T2 | T3 | T7 | T6 |
+---|----|----|----|----|----|----|----|----|
+TAT| 25 | 50 | 60 | 80 | 145| 150| 160| 170|
+ WT| 5  | 30 | 40 | 60 | 125| 130| 140| 160|
+ RT| 0  | 25 | 35 | 60 | 80 | 90 | 100| 160|
 

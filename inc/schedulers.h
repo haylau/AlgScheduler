@@ -21,7 +21,7 @@
 #define MIN_PRIORITY 1
 #define MAX_PRIORITY 10
 
-#include <stdbool.h>
+#include <stdbool.h> // bool
 #include <stdlib.h>
 
 #include "task.h"

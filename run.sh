@@ -21,6 +21,8 @@ echo -e "\n"
 echo -e "Running RR" 
 ./bin/rr tests/schedule.txt
 echo -e "\n"
+./bin/rr tests/rr-schedule.txt
+echo -e "\n"
 
 echo -e "Running PRI" 
 ./bin/priority tests/schedule.txt

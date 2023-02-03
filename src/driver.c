@@ -51,5 +51,12 @@ int main(int argc, char* argv[])
     // invoke the scheduler
     schedule();
 
+    // print cpu data
+    printCPUUtil();
+    printCPUTime();
+
+    // 
+    stopCPU();
+
     return 0;
 }

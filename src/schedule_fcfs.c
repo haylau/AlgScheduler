@@ -8,7 +8,6 @@
  *
  */
 
-
 #include "../inc/schedulers.h"
 
 #define TID_INIT 1
