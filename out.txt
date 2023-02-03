@@ -1,0 +1,130 @@
+rm -rf bin/*.o
+rm -rf bin/fcfs
+rm -rf bin/sjf
+rm -rf bin/rr
+rm -rf bin/priority
+rm -rf bin/priority_rr
+gcc -Wall -Wextra -o bin/driver.o -c src/driver.c
+gcc -Wall -Wextra -o bin/list.o -c src/list.c
+gcc -Wall -Wextra -o bin/cpu.o -c src/cpu.c
+gcc -Wall -Wextra -o bin/schedule_fcfs.o -c src/schedule_fcfs.c
+gcc -Wall -Wextra -o bin/fcfs bin/list.o bin/cpu.o bin/schedule_fcfs.o bin/driver.o 
+gcc -Wall -Wextra -o bin/driver.o -c src/driver.c
+gcc -Wall -Wextra -o bin/list.o -c src/list.c
+gcc -Wall -Wextra -o bin/cpu.o -c src/cpu.c
+gcc -Wall -Wextra -o bin/schedule_sjf.o -c src/schedule_sjf.c
+gcc -Wall -Wextra -o bin/sjf bin/list.o bin/cpu.o bin/schedule_sjf.o bin/driver.o  
+gcc -Wall -Wextra -o bin/driver.o -c src/driver.c
+gcc -Wall -Wextra -o bin/list.o -c src/list.c
+gcc -Wall -Wextra -o bin/cpu.o -c src/cpu.c
+gcc -Wall -Wextra -o bin/schedule_rr.o -c src/schedule_rr.c
+gcc -Wall -Wextra -o bin/rr bin/list.o bin/cpu.o bin/schedule_rr.o bin/driver.o 
+gcc -Wall -Wextra -o bin/driver.o -c src/driver.c
+gcc -Wall -Wextra -o bin/list.o -c src/list.c
+gcc -Wall -Wextra -o bin/cpu.o -c src/cpu.c
+gcc -Wall -Wextra -o bin/schedule_priority.o -c src/schedule_priority.c
+gcc -Wall -Wextra -o bin/priority bin/list.o bin/cpu.o bin/schedule_priority.o bin/driver.o
+gcc -Wall -Wextra -o bin/driver.o -c src/driver.c
+gcc -Wall -Wextra -o bin/list.o -c src/list.c
+gcc -Wall -Wextra -o bin/cpu.o -c src/cpu.c
+gcc -Wall -Wextra -o bin/schedule_priority_rr.o -c src/schedule_priority_rr.c
+gcc -Wall -Wextra -o bin/priority_rr bin/list.o bin/cpu.o bin/schedule_priority_rr.o bin/driver.o
+
+Running FCFS
+               [nm] [p] [b]
+Running task = [P1] [4] [5] for 5 units.
+Running task = [P2] [1] [3] for 3 units.
+Running task = [P3] [2] [1] for 1 units.
+Running task = [P4] [2] [7] for 7 units.
+Running task = [P5] [3] [4] for 4 units.
+
+
+               [nm] [p] [b]
+Running task = [T1] [4] [20] for 20 units.
+Running task = [T2] [3] [25] for 25 units.
+Running task = [T3] [3] [25] for 25 units.
+Running task = [T4] [5] [15] for 15 units.
+Running task = [T5] [5] [20] for 20 units.
+Running task = [T6] [1] [10] for 10 units.
+Running task = [T7] [3] [30] for 30 units.
+Running task = [T8] [10] [25] for 25 units.
+
+
+Running SJF
+               [nm] [p] [b]
+Running task = [P3] [2] [1] for 1 units.
+Running task = [P2] [1] [3] for 3 units.
+Running task = [P5] [3] [4] for 4 units.
+Running task = [P1] [4] [5] for 5 units.
+Running task = [P4] [2] [7] for 7 units.
+
+
+               [nm] [p] [b]
+Running task = [T6] [1] [10] for 10 units.
+Running task = [T4] [5] [15] for 15 units.
+Running task = [T5] [5] [20] for 20 units.
+Running task = [T1] [4] [20] for 20 units.
+Running task = [T8] [10] [25] for 25 units.
+Running task = [T3] [3] [25] for 25 units.
+Running task = [T2] [3] [25] for 25 units.
+Running task = [T7] [3] [30] for 30 units.
+
+
+Running RR
+               [nm] [p] [b]
+Running task = [T1] [4] [20] for 10 units.
+Running task = [T2] [3] [25] for 10 units.
+Running task = [T3] [3] [25] for 10 units.
+Running task = [T4] [5] [15] for 10 units.
+Running task = [T5] [5] [20] for 10 units.
+Running task = [T6] [1] [10] for 10 units.
+Running task = [T7] [3] [30] for 10 units.
+Running task = [T8] [10] [25] for 10 units.
+Running task = [T1] [4] [10] for 10 units.
+Running task = [T2] [3] [15] for 10 units.
+Running task = [T3] [3] [15] for 10 units.
+Running task = [T4] [5] [5] for 5 units.
+Running task = [T5] [5] [10] for 10 units.
+Running task = [T7] [3] [20] for 10 units.
+Running task = [T8] [10] [15] for 10 units.
+Running task = [T2] [3] [5] for 5 units.
+Running task = [T3] [3] [5] for 5 units.
+Running task = [T7] [3] [10] for 10 units.
+Running task = [T8] [10] [5] for 5 units.
+
+
+Running PRI
+               [nm] [p] [b]
+Running task = [T8] [10] [25] for 25 units.
+Running task = [T5] [5] [20] for 20 units.
+Running task = [T4] [5] [15] for 15 units.
+Running task = [T1] [4] [20] for 20 units.
+Running task = [T7] [3] [30] for 30 units.
+Running task = [T3] [3] [25] for 25 units.
+Running task = [T2] [3] [25] for 25 units.
+Running task = [T6] [1] [10] for 10 units.
+
+
+Running RR-PRI
+               [nm] [p] [b]
+Running task = [T8] [10] [25] for 10 units.
+Running task = [T8] [10] [15] for 10 units.
+Running task = [T8] [10] [5] for 5 units.
+Running task = [T4] [5] [15] for 10 units.
+Running task = [T5] [5] [20] for 10 units.
+Running task = [T4] [5] [5] for 5 units.
+Running task = [T5] [5] [10] for 10 units.
+Running task = [T1] [4] [20] for 10 units.
+Running task = [T1] [4] [10] for 10 units.
+Running task = [T2] [3] [25] for 10 units.
+Running task = [T3] [3] [25] for 10 units.
+Running task = [T7] [3] [30] for 10 units.
+Running task = [T2] [3] [15] for 10 units.
+Running task = [T3] [3] [15] for 10 units.
+Running task = [T7] [3] [20] for 10 units.
+Running task = [T2] [3] [5] for 5 units.
+Running task = [T3] [3] [5] for 5 units.
+Running task = [T7] [3] [10] for 10 units.
+Running task = [T6] [1] [10] for 10 units.
+
+

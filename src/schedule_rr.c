@@ -54,22 +54,14 @@ void add(char* name, int priority, int burst) {
     }
 }
 
-bool comesBefore(char* a, char* b) {
-    return strcmp(a, b) < 0;
-}
-
 // finds the task whose name comes first in dictionary
 Task* pickNextTask() {
     // if list is empty, nothing to do
     if (!g_head) return NULL;
-
-    struct node* temp;
-    temp = g_head;
-
+    struct node* temp = g_head;
     // delete the node from list, Task will get deleted later
     delete (&g_head, temp->task);
     // move head pointer
     g_head = temp->next;
-
     return temp->task;
 }

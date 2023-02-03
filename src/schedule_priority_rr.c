@@ -68,7 +68,7 @@ Task* pickNextTask() {
     Task* best_sofar = temp->task;
 
     while (temp != NULL) {
-        if (best_sofar->priority < temp->task->priority && comesBefore(temp->task->name, best_sofar->name))
+        if (best_sofar->priority < temp->task->priority)
             best_sofar = temp->task;
         temp = temp->next;
     }
@@ -76,7 +76,7 @@ Task* pickNextTask() {
     // delete the node from list, Task will get deleted later
     delete (&g_head, best_sofar);
     // move head pointer
-    if(g_head->task == best_sofar) {
+    if(g_head != NULL && g_head->task == best_sofar) {
         g_head = g_head->next;
     }
 

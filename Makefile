@@ -11,7 +11,7 @@ CFLAGS=-Wall -Wextra
 
 clean:
 	rm -rf bin/*.o
-	rm -rf bin/fcfsbin/schedule_sjf.o
+	rm -rf bin/fcfs
 	rm -rf bin/sjf
 	rm -rf bin/rr
 	rm -rf bin/priority
