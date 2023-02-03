@@ -42,7 +42,7 @@ void logTime(Task* task, int slice) {
 }
 
 void printCPUUtil() {
-    printf("\nCPU Utilization: %%%2.2f\n", (100.0 * (cpu_ticks - cpu_sleep + 1) / (cpu_ticks)));
+    printf("\nCPU Utilization: %%%2.2f\n", (100.0 * (cpu_ticks) / (cpu_ticks + cpu_sleep - 1)));
 }
 
 void printCPUTime() {

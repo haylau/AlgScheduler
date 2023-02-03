@@ -38,7 +38,7 @@ Running task = [P3] [2] [1] for 1 units.
 Running task = [P4] [2] [7] for 7 units.
 Running task = [P5] [3] [4] for 4 units.
 
-CPU Utilization: %80.00
+CPU Utilization: %83.33
 
    | P1 | P2 | P3 | P4 | P5 |
 ---|----|----|----|----|----|
@@ -56,7 +56,7 @@ Running task = [T6] [1] [10] for 10 units.
 Running task = [T7] [3] [30] for 30 units.
 Running task = [T8] [10] [25] for 25 units.
 
-CPU Utilization: %95.88
+CPU Utilization: %96.05
 
    | T1 | T2 | T3 | T4 | T5 | T6 | T7 | T8 |
 ---|----|----|----|----|----|----|----|----|
@@ -72,7 +72,7 @@ Running task = [P5] [3] [4] for 4 units.
 Running task = [P1] [4] [5] for 5 units.
 Running task = [P4] [2] [7] for 7 units.
 
-CPU Utilization: %80.00
+CPU Utilization: %83.33
 
    | P3 | P2 | P5 | P1 | P4 |
 ---|----|----|----|----|----|
@@ -90,7 +90,7 @@ Running task = [T3] [3] [25] for 25 units.
 Running task = [T2] [3] [25] for 25 units.
 Running task = [T7] [3] [30] for 30 units.
 
-CPU Utilization: %95.88
+CPU Utilization: %96.05
 
    | T6 | T4 | T5 | T1 | T8 | T3 | T2 | T7 |
 ---|----|----|----|----|----|----|----|----|
@@ -120,7 +120,7 @@ Running task = [T3] [3] [5] for 5 units.
 Running task = [T7] [3] [10] for 10 units.
 Running task = [T8] [10] [5] for 5 units.
 
-CPU Utilization: %89.41
+CPU Utilization: %90.43
 
    | T1 | T2 | T3 | T4 | T5 | T6 | T7 | T8 |
 ---|----|----|----|----|----|----|----|----|
@@ -160,7 +160,7 @@ Running task = [T4] [40] [10] for 10 units.
 Running task = [T5] [40] [10] for 10 units.
 Running task = [T6] [40] [10] for 10 units.
 
-CPU Utilization: %90.33
+CPU Utilization: %91.19
 
    | T1 | T2 | T3 | T4 | T5 | T6 |
 ---|----|----|----|----|----|----|
@@ -179,7 +179,7 @@ Running task = [T3] [3] [25] for 25 units.
 Running task = [T7] [3] [30] for 30 units.
 Running task = [T6] [1] [10] for 10 units.
 
-CPU Utilization: %95.88
+CPU Utilization: %96.05
 
    | T8 | T4 | T5 | T1 | T2 | T3 | T7 | T6 |
 ---|----|----|----|----|----|----|----|----|
@@ -209,7 +209,7 @@ Running task = [T3] [3] [5] for 5 units.
 Running task = [T7] [3] [10] for 10 units.
 Running task = [T6] [1] [10] for 10 units.
 
-CPU Utilization: %89.41
+CPU Utilization: %90.43
 
    | T8 | T4 | T5 | T1 | T2 | T3 | T7 | T6 |
 ---|----|----|----|----|----|----|----|----|
