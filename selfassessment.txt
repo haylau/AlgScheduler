@@ -1,0 +1,24 @@
+# Can be compiled with run.sh or individual make's specified by the Makefile
+
+# Modified: 
+
+driver.c
+list.c // this code leaks
+list.h
+cpu.c // keeps track of cpu time
+cpu.h
+schedulers.h // defines necessary implementation for all schedules
+
+# Implemented: 
+
+schedule_fcfs.c -------- 5/5 
+schedule_sjf.c --------- 5/5
+schedule_priority.c ---- 5/5
+schedule_rr.c ---------- 5/5
+schedule_priority_rr.c - 5/5
+
+CPU Utilization          2/0
+CPU Time                 3/0
+
+## Total Grade: 30/25
+
