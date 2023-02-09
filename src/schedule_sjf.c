@@ -65,7 +65,7 @@ Task* pickNextTask() {
     Task* best_sofar = temp->task;
 
     while (temp != NULL) {
-        if (best_sofar->burst > temp->task->burst && comesBefore(temp->task->name, best_sofar->name)) {
+        if (best_sofar->burst >= temp->task->burst && comesBefore(temp->task->name, best_sofar->name)) {
             best_sofar = temp->task;
         }
         temp = temp->next;

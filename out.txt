@@ -4,216 +4,282 @@ rm -rf bin/sjf
 rm -rf bin/rr
 rm -rf bin/priority
 rm -rf bin/priority_rr
-gcc -Wall -Wextra -o bin/driver.o -c src/driver.c
-gcc -Wall -Wextra -o bin/list.o -c src/list.c
-gcc -Wall -Wextra -o bin/cpu.o -c src/cpu.c
-gcc -Wall -Wextra -o bin/schedule_fcfs.o -c src/schedule_fcfs.c
-gcc -Wall -Wextra -o bin/fcfs bin/list.o bin/cpu.o bin/schedule_fcfs.o bin/driver.o 
-gcc -Wall -Wextra -o bin/driver.o -c src/driver.c
-gcc -Wall -Wextra -o bin/list.o -c src/list.c
-gcc -Wall -Wextra -o bin/cpu.o -c src/cpu.c
-gcc -Wall -Wextra -o bin/schedule_sjf.o -c src/schedule_sjf.c
-gcc -Wall -Wextra -o bin/sjf bin/list.o bin/cpu.o bin/schedule_sjf.o bin/driver.o  
-gcc -Wall -Wextra -o bin/driver.o -c src/driver.c
-gcc -Wall -Wextra -o bin/list.o -c src/list.c
-gcc -Wall -Wextra -o bin/cpu.o -c src/cpu.c
-gcc -Wall -Wextra -o bin/schedule_rr.o -c src/schedule_rr.c
-gcc -Wall -Wextra -o bin/rr bin/list.o bin/cpu.o bin/schedule_rr.o bin/driver.o 
-gcc -Wall -Wextra -o bin/driver.o -c src/driver.c
-gcc -Wall -Wextra -o bin/list.o -c src/list.c
-gcc -Wall -Wextra -o bin/cpu.o -c src/cpu.c
-gcc -Wall -Wextra -o bin/schedule_priority.o -c src/schedule_priority.c
-gcc -Wall -Wextra -o bin/priority bin/list.o bin/cpu.o bin/schedule_priority.o bin/driver.o
-gcc -Wall -Wextra -o bin/driver.o -c src/driver.c
-gcc -Wall -Wextra -o bin/list.o -c src/list.c
-gcc -Wall -Wextra -o bin/cpu.o -c src/cpu.c
-gcc -Wall -Wextra -o bin/schedule_priority_rr.o -c src/schedule_priority_rr.c
-gcc -Wall -Wextra -o bin/priority_rr bin/list.o bin/cpu.o bin/schedule_priority_rr.o bin/driver.o
+gcc -Wall -Wextra -g3 -o bin/driver.o -c src/driver.c
+gcc -Wall -Wextra -g3 -o bin/list.o -c src/list.c
+gcc -Wall -Wextra -g3 -o bin/cpu.o -c src/cpu.c
+gcc -Wall -Wextra -g3 -o bin/schedule_fcfs.o -c src/schedule_fcfs.c
+gcc -Wall -Wextra -g3 -o bin/fcfs bin/list.o bin/cpu.o bin/schedule_fcfs.o bin/driver.o 
+gcc -Wall -Wextra -g3 -o bin/driver.o -c src/driver.c
+gcc -Wall -Wextra -g3 -o bin/list.o -c src/list.c
+gcc -Wall -Wextra -g3 -o bin/cpu.o -c src/cpu.c
+gcc -Wall -Wextra -g3 -o bin/schedule_sjf.o -c src/schedule_sjf.c
+gcc -Wall -Wextra -g3 -o bin/sjf bin/list.o bin/cpu.o bin/schedule_sjf.o bin/driver.o  
+gcc -Wall -Wextra -g3 -o bin/driver.o -c src/driver.c
+gcc -Wall -Wextra -g3 -o bin/list.o -c src/list.c
+gcc -Wall -Wextra -g3 -o bin/cpu.o -c src/cpu.c
+gcc -Wall -Wextra -g3 -o bin/schedule_rr.o -c src/schedule_rr.c
+gcc -Wall -Wextra -g3 -o bin/rr bin/list.o bin/cpu.o bin/schedule_rr.o bin/driver.o 
+gcc -Wall -Wextra -g3 -o bin/driver.o -c src/driver.c
+gcc -Wall -Wextra -g3 -o bin/list.o -c src/list.c
+gcc -Wall -Wextra -g3 -o bin/cpu.o -c src/cpu.c
+gcc -Wall -Wextra -g3 -o bin/schedule_priority.o -c src/schedule_priority.c
+gcc -Wall -Wextra -g3 -o bin/priority bin/list.o bin/cpu.o bin/schedule_priority.o bin/driver.o
+gcc -Wall -Wextra -g3 -o bin/driver.o -c src/driver.c
+gcc -Wall -Wextra -g3 -o bin/list.o -c src/list.c
+gcc -Wall -Wextra -g3 -o bin/cpu.o -c src/cpu.c
+gcc -Wall -Wextra -g3 -o bin/schedule_priority_rr.o -c src/schedule_priority_rr.c
+gcc -Wall -Wextra -g3 -o bin/priority_rr bin/list.o bin/cpu.o bin/schedule_priority_rr.o bin/driver.o
 
-Running FCFS
+-- Running FCFS --
                [nm] [p] [b]
 Running task = [P1] [4] [5] for 5 units.
-Running task = [P2] [1] [3] for 3 units.
-Running task = [P3] [2] [1] for 1 units.
-Running task = [P4] [2] [7] for 7 units.
-Running task = [P5] [3] [4] for 4 units.
-
+Time is now: 5.000000Running task = [P2] [1] [3] for 3 units.
+Time is now: 8.000000Running task = [P3] [2] [1] for 1 units.
+Time is now: 9.000000Running task = [P4] [2] [7] for 7 units.
+Time is now: 16.000000Running task = [P5] [3] [4] for 4 units.
+Time is now: 20.000000
 CPU Utilization: %83.33
 
    | P1 | P2 | P3 | P4 | P5 |
 ---|----|----|----|----|----|
 TAT| 5  | 8  | 9  | 16 | 20 |
  WT| 0  | 5  | 8  | 9  | 16 |
- RT| 0  | 5  | 8  | 9  | 16 |
+ RT| 5  | 8  | 9  | 16 | 20 |
+
 
                [nm] [p] [b]
 Running task = [T1] [4] [20] for 20 units.
-Running task = [T2] [3] [25] for 25 units.
-Running task = [T3] [3] [25] for 25 units.
-Running task = [T4] [5] [15] for 15 units.
-Running task = [T5] [5] [20] for 20 units.
-Running task = [T6] [1] [10] for 10 units.
-Running task = [T7] [3] [30] for 30 units.
-Running task = [T8] [10] [25] for 25 units.
-
+Time is now: 20.000000Running task = [T2] [3] [25] for 25 units.
+Time is now: 45.000000Running task = [T3] [3] [25] for 25 units.
+Time is now: 70.000000Running task = [T4] [5] [15] for 15 units.
+Time is now: 85.000000Running task = [T5] [5] [20] for 20 units.
+Time is now: 105.000000Running task = [T6] [1] [10] for 10 units.
+Time is now: 115.000000Running task = [T7] [3] [30] for 30 units.
+Time is now: 145.000000Running task = [T8] [10] [25] for 25 units.
+Time is now: 170.000000
 CPU Utilization: %96.05
 
    | T1 | T2 | T3 | T4 | T5 | T6 | T7 | T8 |
 ---|----|----|----|----|----|----|----|----|
 TAT| 20 | 45 | 70 | 85 | 105| 115| 145| 170|
  WT| 0  | 20 | 45 | 70 | 85 | 105| 115| 145|
- RT| 0  | 20 | 45 | 70 | 85 | 105| 115| 145|
+ RT| 20 | 45 | 70 | 85 | 105| 115| 145| 170|
 
-Running SJF
+
+-- Running SJF --
                [nm] [p] [b]
 Running task = [P3] [2] [1] for 1 units.
-Running task = [P2] [1] [3] for 3 units.
-Running task = [P5] [3] [4] for 4 units.
-Running task = [P1] [4] [5] for 5 units.
-Running task = [P4] [2] [7] for 7 units.
-
+Time is now: 1.000000Running task = [P2] [1] [3] for 3 units.
+Time is now: 4.000000Running task = [P5] [3] [4] for 4 units.
+Time is now: 8.000000Running task = [P1] [4] [5] for 5 units.
+Time is now: 13.000000Running task = [P4] [2] [7] for 7 units.
+Time is now: 20.000000
 CPU Utilization: %83.33
 
    | P3 | P2 | P5 | P1 | P4 |
 ---|----|----|----|----|----|
 TAT| 1  | 4  | 8  | 13 | 20 |
  WT| 0  | 1  | 4  | 8  | 13 |
- RT| 0  | 1  | 4  | 8  | 13 |
+ RT| 1  | 4  | 8  | 13 | 20 |
+
 
                [nm] [p] [b]
 Running task = [T6] [1] [10] for 10 units.
-Running task = [T4] [5] [15] for 15 units.
-Running task = [T5] [5] [20] for 20 units.
-Running task = [T1] [4] [20] for 20 units.
-Running task = [T8] [10] [25] for 25 units.
-Running task = [T3] [3] [25] for 25 units.
-Running task = [T2] [3] [25] for 25 units.
-Running task = [T7] [3] [30] for 30 units.
-
+Time is now: 10.000000Running task = [T4] [5] [15] for 15 units.
+Time is now: 25.000000Running task = [T1] [4] [20] for 20 units.
+Time is now: 45.000000Running task = [T5] [5] [20] for 20 units.
+Time is now: 65.000000Running task = [T2] [3] [25] for 25 units.
+Time is now: 90.000000Running task = [T3] [3] [25] for 25 units.
+Time is now: 115.000000Running task = [T8] [10] [25] for 25 units.
+Time is now: 140.000000Running task = [T7] [3] [30] for 30 units.
+Time is now: 170.000000
 CPU Utilization: %96.05
 
-   | T6 | T4 | T5 | T1 | T8 | T3 | T2 | T7 |
+   | T6 | T4 | T1 | T5 | T2 | T3 | T8 | T7 |
 ---|----|----|----|----|----|----|----|----|
 TAT| 10 | 25 | 45 | 65 | 90 | 115| 140| 170|
  WT| 0  | 10 | 25 | 45 | 65 | 90 | 115| 140|
- RT| 0  | 10 | 25 | 45 | 65 | 90 | 115| 140|
+ RT| 10 | 25 | 45 | 65 | 90 | 115| 140| 170|
 
-Running RR
+
+-- Running RR --
                [nm] [p] [b]
 Running task = [T1] [4] [20] for 10 units.
-Running task = [T2] [3] [25] for 10 units.
-Running task = [T3] [3] [25] for 10 units.
-Running task = [T4] [5] [15] for 10 units.
-Running task = [T5] [5] [20] for 10 units.
-Running task = [T6] [1] [10] for 10 units.
-Running task = [T7] [3] [30] for 10 units.
-Running task = [T8] [10] [25] for 10 units.
-Running task = [T1] [4] [10] for 10 units.
-Running task = [T2] [3] [15] for 10 units.
-Running task = [T3] [3] [15] for 10 units.
-Running task = [T4] [5] [5] for 5 units.
-Running task = [T5] [5] [10] for 10 units.
-Running task = [T7] [3] [20] for 10 units.
-Running task = [T8] [10] [15] for 10 units.
-Running task = [T2] [3] [5] for 5 units.
-Running task = [T3] [3] [5] for 5 units.
-Running task = [T7] [3] [10] for 10 units.
-Running task = [T8] [10] [5] for 5 units.
-
+Time is now: 10.000000Running task = [T2] [3] [25] for 10 units.
+Time is now: 20.000000Running task = [T3] [3] [25] for 10 units.
+Time is now: 30.000000Running task = [T4] [5] [15] for 10 units.
+Time is now: 40.000000Running task = [T5] [5] [20] for 10 units.
+Time is now: 50.000000Running task = [T6] [1] [10] for 10 units.
+Time is now: 60.000000Running task = [T7] [3] [30] for 10 units.
+Time is now: 70.000000Running task = [T8] [10] [25] for 10 units.
+Time is now: 80.000000Running task = [T1] [4] [10] for 10 units.
+Time is now: 90.000000Running task = [T2] [3] [15] for 10 units.
+Time is now: 100.000000Running task = [T3] [3] [15] for 10 units.
+Time is now: 110.000000Running task = [T4] [5] [5] for 5 units.
+Time is now: 115.000000Running task = [T5] [5] [10] for 10 units.
+Time is now: 125.000000Running task = [T7] [3] [20] for 10 units.
+Time is now: 135.000000Running task = [T8] [10] [15] for 10 units.
+Time is now: 145.000000Running task = [T2] [3] [5] for 5 units.
+Time is now: 150.000000Running task = [T3] [3] [5] for 5 units.
+Time is now: 155.000000Running task = [T7] [3] [10] for 10 units.
+Time is now: 165.000000Running task = [T8] [10] [5] for 5 units.
+Time is now: 170.000000
 CPU Utilization: %90.43
 
    | T1 | T2 | T3 | T4 | T5 | T6 | T7 | T8 |
 ---|----|----|----|----|----|----|----|----|
 TAT| 90 | 150| 155| 115| 125| 60 | 165| 170|
- WT| 70 | 130| 135| 95 | 105| 50 | 145| 150|
- RT| 0  | 10 | 20 | 30 | 40 | 50 | 60 | 70 |
+ WT| 70 | 125| 130| 100| 105| 50 | 135| 145|
+ RT| 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 |
+
 
                [nm] [p] [b]
 Running task = [T1] [40] [50] for 10 units.
-Running task = [T2] [40] [50] for 10 units.
-Running task = [T3] [40] [50] for 10 units.
-Running task = [T4] [40] [50] for 10 units.
-Running task = [T5] [40] [50] for 10 units.
-Running task = [T6] [40] [50] for 10 units.
-Running task = [T1] [40] [40] for 10 units.
-Running task = [T2] [40] [40] for 10 units.
-Running task = [T3] [40] [40] for 10 units.
-Running task = [T4] [40] [40] for 10 units.
-Running task = [T5] [40] [40] for 10 units.
-Running task = [T6] [40] [40] for 10 units.
-Running task = [T1] [40] [30] for 10 units.
-Running task = [T2] [40] [30] for 10 units.
-Running task = [T3] [40] [30] for 10 units.
-Running task = [T4] [40] [30] for 10 units.
-Running task = [T5] [40] [30] for 10 units.
-Running task = [T6] [40] [30] for 10 units.
-Running task = [T1] [40] [20] for 10 units.
-Running task = [T2] [40] [20] for 10 units.
-Running task = [T3] [40] [20] for 10 units.
-Running task = [T4] [40] [20] for 10 units.
-Running task = [T5] [40] [20] for 10 units.
-Running task = [T6] [40] [20] for 10 units.
-Running task = [T1] [40] [10] for 10 units.
-Running task = [T2] [40] [10] for 10 units.
-Running task = [T3] [40] [10] for 10 units.
-Running task = [T4] [40] [10] for 10 units.
-Running task = [T5] [40] [10] for 10 units.
-Running task = [T6] [40] [10] for 10 units.
-
+Time is now: 10.000000Running task = [T2] [40] [50] for 10 units.
+Time is now: 20.000000Running task = [T3] [40] [50] for 10 units.
+Time is now: 30.000000Running task = [T4] [40] [50] for 10 units.
+Time is now: 40.000000Running task = [T5] [40] [50] for 10 units.
+Time is now: 50.000000Running task = [T6] [40] [50] for 10 units.
+Time is now: 60.000000Running task = [T1] [40] [40] for 10 units.
+Time is now: 70.000000Running task = [T2] [40] [40] for 10 units.
+Time is now: 80.000000Running task = [T3] [40] [40] for 10 units.
+Time is now: 90.000000Running task = [T4] [40] [40] for 10 units.
+Time is now: 100.000000Running task = [T5] [40] [40] for 10 units.
+Time is now: 110.000000Running task = [T6] [40] [40] for 10 units.
+Time is now: 120.000000Running task = [T1] [40] [30] for 10 units.
+Time is now: 130.000000Running task = [T2] [40] [30] for 10 units.
+Time is now: 140.000000Running task = [T3] [40] [30] for 10 units.
+Time is now: 150.000000Running task = [T4] [40] [30] for 10 units.
+Time is now: 160.000000Running task = [T5] [40] [30] for 10 units.
+Time is now: 170.000000Running task = [T6] [40] [30] for 10 units.
+Time is now: 180.000000Running task = [T1] [40] [20] for 10 units.
+Time is now: 190.000000Running task = [T2] [40] [20] for 10 units.
+Time is now: 200.000000Running task = [T3] [40] [20] for 10 units.
+Time is now: 210.000000Running task = [T4] [40] [20] for 10 units.
+Time is now: 220.000000Running task = [T5] [40] [20] for 10 units.
+Time is now: 230.000000Running task = [T6] [40] [20] for 10 units.
+Time is now: 240.000000Running task = [T1] [40] [10] for 10 units.
+Time is now: 250.000000Running task = [T2] [40] [10] for 10 units.
+Time is now: 260.000000Running task = [T3] [40] [10] for 10 units.
+Time is now: 270.000000Running task = [T4] [40] [10] for 10 units.
+Time is now: 280.000000Running task = [T5] [40] [10] for 10 units.
+Time is now: 290.000000Running task = [T6] [40] [10] for 10 units.
+Time is now: 300.000000
 CPU Utilization: %91.19
 
    | T1 | T2 | T3 | T4 | T5 | T6 |
 ---|----|----|----|----|----|----|
 TAT| 250| 260| 270| 280| 290| 300|
- WT| 230| 240| 250| 260| 270| 280|
- RT| 0  | 10 | 20 | 30 | 40 | 50 |
+ WT| 200| 210| 220| 230| 240| 250|
+ RT| 10 | 20 | 30 | 40 | 50 | 60 |
 
-Running PRI
+
+-- Running PRI --
                [nm] [p] [b]
 Running task = [T8] [10] [25] for 25 units.
-Running task = [T4] [5] [15] for 15 units.
-Running task = [T5] [5] [20] for 20 units.
-Running task = [T1] [4] [20] for 20 units.
-Running task = [T2] [3] [25] for 25 units.
-Running task = [T3] [3] [25] for 25 units.
-Running task = [T7] [3] [30] for 30 units.
-Running task = [T6] [1] [10] for 10 units.
-
+Time is now: 25.000000Running task = [T4] [5] [15] for 15 units.
+Time is now: 40.000000Running task = [T5] [5] [20] for 20 units.
+Time is now: 60.000000Running task = [T1] [4] [20] for 20 units.
+Time is now: 80.000000Running task = [T2] [3] [25] for 25 units.
+Time is now: 105.000000Running task = [T3] [3] [25] for 25 units.
+Time is now: 130.000000Running task = [T7] [3] [30] for 30 units.
+Time is now: 160.000000Running task = [T6] [1] [10] for 10 units.
+Time is now: 170.000000
 CPU Utilization: %96.05
 
    | T8 | T4 | T5 | T1 | T2 | T3 | T7 | T6 |
 ---|----|----|----|----|----|----|----|----|
 TAT| 25 | 40 | 60 | 80 | 105| 130| 160| 170|
  WT| 0  | 25 | 40 | 60 | 80 | 105| 130| 160|
- RT| 0  | 25 | 40 | 60 | 80 | 105| 130| 160|
+ RT| 25 | 40 | 60 | 80 | 105| 130| 160| 170|
 
-Running RR-PRI
+
+               [nm] [p] [b]
+Running task = [T1] [1] [50] for 50 units.
+Time is now: 50.000000Running task = [T2] [1] [50] for 50 units.
+Time is now: 100.000000Running task = [T3] [1] [50] for 50 units.
+Time is now: 150.000000Running task = [T4] [1] [50] for 50 units.
+Time is now: 200.000000Running task = [T5] [1] [50] for 50 units.
+Time is now: 250.000000Running task = [T6] [1] [50] for 50 units.
+Time is now: 300.000000
+CPU Utilization: %98.36
+
+   | T1 | T2 | T3 | T4 | T5 | T6 |
+---|----|----|----|----|----|----|
+TAT| 50 | 100| 150| 200| 250| 300|
+ WT| 0  | 50 | 100| 150| 200| 250|
+ RT| 50 | 100| 150| 200| 250| 300|
+
+
+-- Running RR-PRI --
+               [nm] [p] [b]
+Running task = [T1] [40] [50] for 10 units.
+Time is now: 10.000000Running task = [T2] [40] [50] for 10 units.
+Time is now: 20.000000Running task = [T3] [40] [50] for 10 units.
+Time is now: 30.000000Running task = [T4] [40] [50] for 10 units.
+Time is now: 40.000000Running task = [T5] [40] [50] for 10 units.
+Time is now: 50.000000Running task = [T6] [40] [50] for 10 units.
+Time is now: 60.000000Running task = [T1] [40] [40] for 10 units.
+Time is now: 70.000000Running task = [T2] [40] [40] for 10 units.
+Time is now: 80.000000Running task = [T3] [40] [40] for 10 units.
+Time is now: 90.000000Running task = [T4] [40] [40] for 10 units.
+Time is now: 100.000000Running task = [T5] [40] [40] for 10 units.
+Time is now: 110.000000Running task = [T6] [40] [40] for 10 units.
+Time is now: 120.000000Running task = [T1] [40] [30] for 10 units.
+Time is now: 130.000000Running task = [T2] [40] [30] for 10 units.
+Time is now: 140.000000Running task = [T3] [40] [30] for 10 units.
+Time is now: 150.000000Running task = [T4] [40] [30] for 10 units.
+Time is now: 160.000000Running task = [T5] [40] [30] for 10 units.
+Time is now: 170.000000Running task = [T6] [40] [30] for 10 units.
+Time is now: 180.000000Running task = [T1] [40] [20] for 10 units.
+Time is now: 190.000000Running task = [T2] [40] [20] for 10 units.
+Time is now: 200.000000Running task = [T3] [40] [20] for 10 units.
+Time is now: 210.000000Running task = [T4] [40] [20] for 10 units.
+Time is now: 220.000000Running task = [T5] [40] [20] for 10 units.
+Time is now: 230.000000Running task = [T6] [40] [20] for 10 units.
+Time is now: 240.000000Running task = [T1] [40] [10] for 10 units.
+Time is now: 250.000000Running task = [T2] [40] [10] for 10 units.
+Time is now: 260.000000Running task = [T3] [40] [10] for 10 units.
+Time is now: 270.000000Running task = [T4] [40] [10] for 10 units.
+Time is now: 280.000000Running task = [T5] [40] [10] for 10 units.
+Time is now: 290.000000Running task = [T6] [40] [10] for 10 units.
+Time is now: 300.000000
+CPU Utilization: %91.19
+
+   | T1 | T2 | T3 | T4 | T5 | T6 |
+---|----|----|----|----|----|----|
+TAT| 250| 260| 270| 280| 290| 300|
+ WT| 200| 210| 220| 230| 240| 250|
+ RT| 10 | 20 | 30 | 40 | 50 | 60 |
+
+
                [nm] [p] [b]
 Running task = [T8] [10] [25] for 10 units.
-Running task = [T8] [10] [15] for 10 units.
-Running task = [T8] [10] [5] for 5 units.
-Running task = [T4] [5] [15] for 10 units.
-Running task = [T5] [5] [20] for 10 units.
-Running task = [T4] [5] [5] for 5 units.
-Running task = [T5] [5] [10] for 10 units.
-Running task = [T1] [4] [20] for 10 units.
-Running task = [T1] [4] [10] for 10 units.
-Running task = [T2] [3] [25] for 10 units.
-Running task = [T3] [3] [25] for 10 units.
-Running task = [T7] [3] [30] for 10 units.
-Running task = [T2] [3] [15] for 10 units.
-Running task = [T3] [3] [15] for 10 units.
-Running task = [T7] [3] [20] for 10 units.
-Running task = [T2] [3] [5] for 5 units.
-Running task = [T3] [3] [5] for 5 units.
-Running task = [T7] [3] [10] for 10 units.
-Running task = [T6] [1] [10] for 10 units.
-
+Time is now: 10.000000Running task = [T8] [10] [15] for 10 units.
+Time is now: 20.000000Running task = [T8] [10] [5] for 5 units.
+Time is now: 25.000000Running task = [T4] [5] [15] for 10 units.
+Time is now: 35.000000Running task = [T5] [5] [20] for 10 units.
+Time is now: 45.000000Running task = [T4] [5] [5] for 5 units.
+Time is now: 50.000000Running task = [T5] [5] [10] for 10 units.
+Time is now: 60.000000Running task = [T1] [4] [20] for 10 units.
+Time is now: 70.000000Running task = [T1] [4] [10] for 10 units.
+Time is now: 80.000000Running task = [T2] [3] [25] for 10 units.
+Time is now: 90.000000Running task = [T3] [3] [25] for 10 units.
+Time is now: 100.000000Running task = [T7] [3] [30] for 10 units.
+Time is now: 110.000000Running task = [T2] [3] [15] for 10 units.
+Time is now: 120.000000Running task = [T3] [3] [15] for 10 units.
+Time is now: 130.000000Running task = [T7] [3] [20] for 10 units.
+Time is now: 140.000000Running task = [T2] [3] [5] for 5 units.
+Time is now: 145.000000Running task = [T3] [3] [5] for 5 units.
+Time is now: 150.000000Running task = [T7] [3] [10] for 10 units.
+Time is now: 160.000000Running task = [T6] [1] [10] for 10 units.
+Time is now: 170.000000
 CPU Utilization: %90.43
 
    | T8 | T4 | T5 | T1 | T2 | T3 | T7 | T6 |
 ---|----|----|----|----|----|----|----|----|
 TAT| 25 | 50 | 60 | 80 | 145| 150| 160| 170|
- WT| 5  | 30 | 40 | 60 | 125| 130| 140| 160|
- RT| 0  | 25 | 35 | 60 | 80 | 90 | 100| 160|
+ WT| 0  | 35 | 40 | 60 | 120| 125| 130| 160|
+ RT| 10 | 35 | 45 | 70 | 90 | 100| 110| 170|
+
 

@@ -14,6 +14,7 @@ void run(Task* task, int slice) {
     printf("Running task = [%s] [%d] [%d] for %d units.\n", task->name, task->priority, task->remaining_time, slice);
     task->remaining_time -= slice;
     logTime(task, slice);
+    printf("\tTime is now: %3.0f \n", cpu_ticks);
 }
 
 void logTime(Task* task, int slice) {
