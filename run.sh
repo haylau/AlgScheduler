@@ -27,7 +27,11 @@ echo -e "\n"
 echo -e "Running PRI" 
 ./bin/priority tests/schedule.txt
 echo -e "\n"
+./bin/priority tests/pri-schedule.txt
+echo -e "\n"
 
 echo -e "Running RR-PRI" 
+./bin/priority_rr tests/rr-schedule.txt
+echo -e "\n"
 ./bin/priority_rr tests/schedule.txt
 echo -e "\n"

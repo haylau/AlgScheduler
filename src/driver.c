@@ -55,8 +55,8 @@ int main(int argc, char* argv[])
     printCPUUtil();
     printCPUTime();
 
-    // 
-    stopCPU();
+    // free cpu log memory
+    emptyCPULog();
 
     return 0;
 }

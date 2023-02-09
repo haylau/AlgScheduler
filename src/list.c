@@ -15,21 +15,22 @@ void insert(struct node** head, Task* newTask) {
     newNode->next = *head;
     *head = newNode;
 }
-
+ 
 // add a new task to the end of the list of tasks
 void append(struct node** tail, Task* newTask) {
-    if (tail == NULL) return;
+    if (*tail == NULL) return;
     struct node* temp = *tail;
     // iterate to end
     while (temp->next != NULL) {
         temp = temp->next;
     }
     // add the new task to the list 
-    struct node* newNode = malloc(sizeof(struct node));
+    struct node* newNode = calloc(1, sizeof(struct node));
     // add node to end of list
     newNode->task = newTask;
     newNode->next = NULL;
     temp->next = newNode;
+    *tail = newNode;
 }
 
 // delete the selected task from the list
@@ -47,12 +48,13 @@ void delete(struct node** head, Task* task) {
         prev = *head;
         temp = temp->next;
         while (strcmp(task->name, temp->task->name) != 0) {
+            // delete temp node
             prev = temp;
             temp = temp->next;
         }
-
         prev->next = temp->next;
     }
+    free(temp);
 }
 
 // traverse the list

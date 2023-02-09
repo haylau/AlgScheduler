@@ -7,7 +7,7 @@
 # make priority_rr - for priority with round robin scheduling
 
 CC=gcc
-CFLAGS=-Wall -Wextra
+CFLAGS=-Wall -Wextra -g3
 
 clean:
 	rm -rf bin/*.o

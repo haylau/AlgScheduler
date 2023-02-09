@@ -15,20 +15,20 @@
 
 int tid_seq = TID_INIT;
 struct node* g_head;
-struct node* g_end;
+struct node* g_tail;
 
 // execute scheduled programs
 void schedule() {
     printf("               [nm] [p] [b]\n");
     while (!isEmpty(g_head)) {
         Task* nextTask = pickNextTask();
-        run(nextTask, min(nextTask->burst, QUANTUM));
-        nextTask->burst = max(nextTask->burst - QUANTUM, 0);
+        run(nextTask, min(nextTask->remaining_time, QUANTUM));
         // if process still has runtime, add to end of list
-        if (nextTask->burst > 0) {
-            append(&g_end, nextTask);
+        if (nextTask->remaining_time > 0) {
+            append(&g_tail, nextTask);
         }
-        else if (nextTask->burst == 0) {
+        else if (nextTask->remaining_time == 0) {
+            free(nextTask->name);
             free(nextTask);
         }
     }
@@ -38,19 +38,21 @@ void schedule() {
 void add(char* name, int priority, int burst) {
     // create a task
     ++tid_seq;
-    Task* task = (Task*)malloc(sizeof(task));
+    Task* task = (Task*)malloc(sizeof(Task));
     task->name = name;
     task->tid = tid_seq;
     task->priority = priority;
     task->burst = burst;
+    task->remaining_time = burst;
+    task->arrival_time = 0; // guarenteed for this program
     // insert node
     if (g_head == NULL) {
-        g_head = (struct node*)malloc(sizeof(struct node));
+        g_head = (struct node*)calloc(1, sizeof(struct node));
         g_head->task = task;
-        g_end = g_head;
+        g_tail = g_head;
     }
     else {
-        append(&g_end, task);
+        append(&g_tail, task);
     }
 }
 
@@ -58,10 +60,11 @@ void add(char* name, int priority, int burst) {
 Task* pickNextTask() {
     // if list is empty, nothing to do
     if (!g_head) return NULL;
-    struct node* temp = g_head;
+    struct node* temp = g_head->next;
+    Task* nextTask = g_head->task;
     // delete the node from list, Task will get deleted later
-    delete (&g_head, temp->task);
+    delete (&g_head, nextTask);
     // move head pointer
-    g_head = temp->next;
-    return temp->task;
+    g_head = temp;
+    return nextTask;
 }

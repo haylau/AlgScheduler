@@ -14,7 +14,7 @@
 
 int tid_seq = TID_INIT;
 struct node* g_head;
-struct node* g_end;
+struct node* g_tail;
 
 // execute scheduled programs
 void schedule() {
@@ -22,6 +22,8 @@ void schedule() {
     while (!isEmpty(g_head)) {
         Task* nextTask = pickNextTask();
         run(nextTask, nextTask->burst);
+        free(nextTask->name);
+        free(nextTask);
     }
 }
 
@@ -29,16 +31,18 @@ void schedule() {
 void add(char* name, int priority, int burst) {
     // create a task
     ++tid_seq;
-    Task* task = (Task*)malloc(sizeof(task));
+    Task* task = (Task*)malloc(sizeof(Task));
     task->name = name;
     task->tid = tid_seq;
     task->priority = priority;
-    task->burst= burst;
+    task->burst = burst;
+    task->remaining_time = burst;
+    task->arrival_time = 0; // guarenteed for this program
     // insert node
     if (g_head == NULL) {
-        g_head = (struct node*)malloc(sizeof(struct node));
+        g_head = (struct node*)calloc(1, sizeof(struct node));
         g_head->task = task;
-        g_end = g_head;
+        g_tail = g_head;
     }
     else {
         insert(&g_head, task);
@@ -52,11 +56,9 @@ bool comesBefore(char* a, char* b) {
 // finds the task whose name comes first in dictionary
 Task* pickNextTask() {
     // if list is empty, nothing to do
-    if (!g_head)
-        return NULL;
+    if (g_head == NULL) return NULL;
 
-    struct node* temp;
-    temp = g_head;
+    struct node* temp = g_head;
     Task* best_sofar = temp->task;
 
     while (temp != NULL) {
