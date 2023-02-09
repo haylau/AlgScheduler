@@ -44,6 +44,7 @@ int main(int argc, char* argv[])
         add(name, priority, burst);
 
         free(temp);
+
     }
 
     fclose(in);

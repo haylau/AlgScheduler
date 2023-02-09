@@ -50,7 +50,6 @@ void delete(struct node** head, Task* task) {
             prev = temp;
             temp = temp->next;
         }
-
         prev->next = temp->next;
     }
 }

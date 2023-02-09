@@ -34,7 +34,7 @@ void logTime(Task* task, int slice) {
     }
     // process not in list, just starting executing
     alg_time[i] = (cputime_t*)malloc(sizeof(cputime_t));
-    alg_time[i]->name = task->name;
+    alg_time[i]->name = strdup(task->name);
     alg_time[i]->waitTime = cpu_ticks - slice;
     alg_time[i]->turnAroundTime = (slice >= task->burst) ? cpu_ticks : 0;
     alg_time[i]->responseTime = cpu_ticks - slice;
@@ -83,6 +83,7 @@ void printCPUTime() {
 
 void stopCPU() {
     for(int i = 0; i < MAXALGS; ++i) {
+        free(alg_time[i]->name);
         free(alg_time[i]);
     }
 }

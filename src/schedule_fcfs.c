@@ -22,6 +22,8 @@ void schedule() {
     while (!isEmpty(g_head)) {
         Task* nextTask = pickNextTask();
         run(nextTask, nextTask->burst);
+        free(nextTask->name);
+        free(nextTask);
     }
 }
 
@@ -29,8 +31,8 @@ void schedule() {
 void add(char* name, int priority, int burst) {
     // create a task
     ++tid_seq;
-    Task* task = (Task*)malloc(sizeof(task));
-    task->name = name;
+    Task* task = (Task*)malloc(sizeof(Task));
+    task->name = strdup(name);
     task->tid = tid_seq;
     task->priority = priority;
     task->burst= burst;

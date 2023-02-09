@@ -38,7 +38,7 @@ void schedule() {
 void add(char* name, int priority, int burst) {
     // create a task
     ++tid_seq;
-    Task* task = (Task*)malloc(sizeof(task));
+    Task* task = (Task*)malloc(sizeof(Task));
     task->name = name;
     task->tid = tid_seq;
     task->priority = priority;
