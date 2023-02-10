@@ -18,9 +18,6 @@ void run(Task* task, int slice) {
 }
 
 void logTime(Task* task, int slice) {
-    cpu_ticks += slice;
-    ++cpu_sleep;
-
     // find process with 'name'
     int i = 0;
     while (alg_time[i] != NULL) {
@@ -42,6 +39,11 @@ void logTime(Task* task, int slice) {
     alg_time[i]->arrivalTime = 0; // can assume for this program
     alg_time[i]->beginTime = cpu_ticks;
     alg_time[i]->endTime = 0;
+    
+    // update cpu clock
+    cpu_ticks += slice;
+    ++cpu_sleep;
+
     if (task->remaining_time <= 0) {
         // task exits
         alg_time[i]->endTime = cpu_ticks;
