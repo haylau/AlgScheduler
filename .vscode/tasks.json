@@ -12,7 +12,7 @@
                 "${workspaceFolder}/src/cpu.c",
                 "${workspaceFolder}/src/driver.c",
                 "${workspaceFolder}/src/list.c",
-                "${workspaceFolder}/src/schedule_priority_rr.c",
+                "${workspaceFolder}/src/schedule_priority.c",
                 "-o",
                 "${workspaceFolder}/bin/vsc.out"
             ],

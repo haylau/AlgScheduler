@@ -11,7 +11,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/bin/vsc.out",
             "args": [
-                "tests/schedule.txt"
+                "tests/schedule2.txt"
             ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
